@@ -15,10 +15,11 @@ class CreateAlbumsTable extends Migration
     {
         Schema::create('albums', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->string('name');
             $table->string('description');
             $table->string('cover_image');
-             $table->integer('user_id')->nullable();
             $table->timestamps();
         });
     }

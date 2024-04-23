@@ -18,10 +18,10 @@
 <div class="login-box">
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="../../index2.html" class="h1"><b>Admin</b>LTE</a>
+      <a href="../../index2.html" class="h1"><b>Gallery</b></a>
     </div>
     <div class="card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <p class="login-box-msg">Login Untuk Pengalaman Yang Tak Terbatas</p>
 
       <div class="card-body">
         @if(session('error'))
@@ -52,7 +52,7 @@
         </form>
 
         <p class="mb-0">
-          <a href="{{ route('auth.register') }}" class="text-center">Register a new membership</a>
+          <a href="{{ route('auth.register') }}" class="text-center">Belum Punya Akun? Register Sekarang</a>
         </p>
       </div>
     </div>

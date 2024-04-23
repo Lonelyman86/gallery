@@ -32,38 +32,40 @@
 
 </style>
 
-<section class="text-center container">
-    <div class="row py-lg-5 shad">
-        <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light">Gallery</h1>
-            <p class="lead text-muted">Uji Coba</p>
+<div class="content-wrapper">
+    <section class="text-center container">
+        <div class="row py-lg-5 shad">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Gallery</h1>
+                <p class="lead text-muted">Uji Coba</p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="content">
-    <div class="container-fluid">
-        <div class="row card-wrapper">
-            @foreach ($albums as $album)
-            <a href="{{route('albums.show' , $album->id)}}" class="col-md-4 text-dark">
-                <div class="card card-primary shadow">
-                    <div class="card-body p-0">
-                        <img src="/storage/album_covers/{{$album->cover_image}}"
-                            style="height: 300px; width: 100%; object-fit: cover;" class="card-img-top"
-                            alt="Album Image">
-                        <div class="card-body">
-                            <h5 class="card-title">{{$album->name}}</h5>
-                            <p class="card-text">{{$album->description}}</p>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row card-wrapper">
+                @foreach ($albums as $album)
+                <a href="{{route('albums.show' , $album->id)}}" class="col-md-4 text-dark">
+                    <div class="card card-primary shadow">
+                        <div class="card-body p-0">
+                            <img src="/storage/album_covers/{{$album->cover_image}}"
+                                style="height: 300px; width: 100%; object-fit: cover;" class="card-img-top"
+                                alt="Album Image">
+                            <div class="card-body">
+                                <h5 class="card-title">{{$album->name}}</h5>
+                                <p class="card-text">{{$album->description}}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </a>
-            @endforeach
+                </a>
+                @endforeach
+            </div>
+            <div class="d-flex justify-content-between mt-4">
+                <p>Showing {{ $albums->firstItem() }} - {{ $albums->lastItem() }} of {{ $albums->total() }} results</p>
+                {{ $albums->links('pagination::bootstrap-4') }}
+            </div>
         </div>
-        <div class="d-flex justify-content-between mt-4">
-            <p>Showing {{ $albums->firstItem() }} - {{ $albums->lastItem() }} of {{ $albums->total() }} results</p>
-            {{ $albums->links('pagination::bootstrap-4') }}
-        </div>
-    </div>
-</section>
+    </section>
+</div>
 @endsection

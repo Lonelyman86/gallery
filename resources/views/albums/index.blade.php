@@ -4,31 +4,40 @@
 
 <style>
     .card {
-        width: 250px; /* Ubah lebar card sesuai kebutuhan */
-        margin-bottom: 20px; /* Atur margin bawah card */
+        width: 250px;
+        /* Ubah lebar card sesuai kebutuhan */
+        margin-bottom: 20px;
+        /* Atur margin bawah card */
     }
 
     .card .card-img-top {
-        height: 200px; /* Ubah tinggi gambar sesuai kebutuhan */
+        height: 200px;
+        /* Ubah tinggi gambar sesuai kebutuhan */
     }
 
     .card-wrapper {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Mengatur lebar card */
-        gap: 10px; /* Mengatur jarak antara card */
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        /* Mengatur lebar card */
+        gap: 10px;
+        /* Mengatur jarak antara card */
     }
 
     .header-title {
-        text-align: center; /* Menempatkan teks ke tengah */
-        margin-top: 20px; /* Menambahkan ruang atas */
+        text-align: center;
+        /* Menempatkan teks ke tengah */
+        margin-top: 20px;
+        /* Menambahkan ruang atas */
     }
-</style>
 
+</style>
+<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-12 header-title"> <!-- Menggunakan kelas header-title di sini -->
+                <div class="col-sm-12 header-title">
+                    <!-- Menggunakan kelas header-title di sini -->
                     <h1>{{ Auth::user()->name }} Gallery</h1> <!-- Ubah teks sesuai kebutuhan -->
                 </div>
             </div>
@@ -39,7 +48,8 @@
             <div class="row justify-content-end">
                 <div class="col-md-6">
                     <div class="d-grid gap-2">
-                        <a class="btn btn-success float-right mb-3" href="/myalbums/create"> <!-- Tambahkan mb-3 di sini -->
+                        <a class="btn btn-success float-right mb-3" href="/myalbums/create">
+                            <!-- Tambahkan mb-3 di sini -->
                             <i class="fas fa-plus mr-1"></i> Buat Album Baru
                         </a>
                     </div>
@@ -91,5 +101,5 @@
 
     <!-- /.content -->
 </div>
-
+</div>
 @endsection
